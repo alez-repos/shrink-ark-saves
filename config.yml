@@ -1,0 +1,15 @@
+# Tribes to preserve
+no_destroy_tribes:
+  - 1566441275
+audit_file: "AuditLog_2023-9-15_0-7.json"
+# RCON options
+rcon:
+  address: '192.168.0.9'
+  port: 32330
+  password: 'admin_password_here'
+# For no_hang_detection to work you must enable it in server config (-nohangdetection) and set it here to True.
+# If set to True then program will not ask before wiping large (>10000 structures) tribes.
+# It is not recommended as the deletion of such large tribes is pretty slow with that method. It is preferable
+# to let the program generate a destroy.txt file and execute ingame.
+# Use it with care and ensure the save is not corrupted.
+no_hang_detection: False
