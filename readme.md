@@ -4,9 +4,10 @@
 
 ## Prerequisites
 
-> **Note**: An alternative is to download the pre-packaged release, which is set up, includes python and is ready to run after you edit the config.yml file.
+> **Note**: An alternative is to download the [pre-packaged release for Windows](https://github.com/alez-repos/shrink-ark-saves/releases/tag/latest), which is set up, includes python and is ready to run after you edit the config.yml file.
 
 1. **Python Installation**: Ensure Python is installed on your machine.
+   
 2. **Repository Setup**:
    - Clone the GitHub repository.
    - Navigate to the repository directory.
@@ -46,7 +47,8 @@
      ```
      setcheatplayer 1
      ```
-      > You can also get your TribeID if you run the program. Before starting it will show all detected tribes in the JSON, just search for your tribe name and copy the ID, then Ctrl+c and edit the config file.
+   - Look to an structure that belong to you. Note the TribeID.
+      > Another way to get your TribeID: Edit the config.yml to add the JSON and run `shrink.py`. When `shrink.py` starts it will show a list of Tribes ordered by structures and number of dinos. Find your tribe, keep the TribeID for the next step and press Control+C to interrupt the program.
 
 3. **Configuration**:
    - In `config.yml`, list the TribeIDs you wish to retain, along with the RCON parameters (password, host, and port) and JSON dump filename. Multiple tribes can be listed, one per line.
@@ -57,6 +59,7 @@
      1. Removes all tribes, except those listed in `config.yml`, starting from the smallest based on structure count. Tribes with more than 10,000 structures will prompt for confirmation due to potential server crash risks.
    
         > Optionally, a `destroy.txt` file can be generated, containing commands to remove large tribes. Follow the in-program instructions to execute these commands within the game. This is the recommended method to delete large (>10k structures) tribes.
+        Note that the path where you have to copy `destroy.txt` is inside your CLIENT installation, NOT SERVER. If you copy it to server installation by mistake it wont work and no messages will be shown in game console.
      2. Deletes all players without an associated tribe.
   
 
