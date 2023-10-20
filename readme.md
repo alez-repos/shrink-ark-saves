@@ -1,6 +1,6 @@
 # shrink.py: ARK:SE Save shrinker
 
-`shrink.py` is a utility designed to optimize the size of official ARK: Survival Evolved save files by removing unnecessary tribes.
+`shrink.py` is an utility designed to optimize the size of official ARK: Survival Evolved save files by removing unnecessary tribes.
 
 ## Prerequisites
 
@@ -56,10 +56,13 @@
 4. **Program Execution**:
    - With the server running, execute the program.
    - The program operates in two phases:
-     1. Removes all tribes, except those listed in `config.yml`, starting from the smallest based on structure count. Tribes with more than 10,000 structures will prompt for confirmation due to potential server crash risks.
+     1. Removes all tribes, except those listed in `config.yml`, starting from the smallest based on structure count. Tribes with more than 10,000 structures will prompt for confirmation due to potential server crash risks. It is recommended to reply 'a'.
    
-        > Optionally, a `destroy.txt` file can be generated, containing commands to remove large tribes. Follow the in-program instructions to execute these commands within the game. This is the recommended method to delete large (>10k structures) tribes.
-        Note that the path where you have to copy `destroy.txt` is inside your CLIENT installation, NOT SERVER. If you copy it to server installation by mistake it wont work and no messages will be shown in game console.
+        > When you choose 'a', a `destroy.txt` file will be generated, containing commands to remove large tribes. Follow the in-program instructions to execute these commands within the game. This is the recommended method to delete large (>10k structures) tribes.
+
+         Basically at the end of phase 1, once the `destroy.txt` file contains all the large tribes, you will copy it to a path inside ARK client installation and run in-game, as admin, `exec destroy.txt` one time per tribe inside the file. You will notice that you dont need to run the exec command again when the response in the console only contains lines indicating that 0 structures have been deleted.
+
+        Note that the path where you have to copy `destroy.txt` is inside your CLIENT installation, NOT SERVER. If you copy it to server installation or to another incorrect path by mistake it wont work and no messages will be shown in game console.
      2. Deletes all players without an associated tribe.
   
 
